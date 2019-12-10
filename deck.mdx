@@ -1,0 +1,188 @@
+export {default as theme} from './src';
+import {Head, Image} from 'mdx-deck';
+import {Layout, LayoutNoFooter, CodeSanbox, BGImage, FlexDiv} from './src';
+import {CodeSurfer} from 'mdx-deck-code-surfer';
+import nightOwl from 'prism-react-renderer/themes/nightOwl';
+
+<Head>
+  <title>VlbgWebDev Serverless Pre-Rendering</title>
+</Head>
+
+# VlbgWebDev
+
+### Serverless Pre-Rendering
+
+<FlexDiv>
+  <Image
+    style={{ width: '300px',height:'300px', marginBottom:40 }}
+    src={require('file-loader!./images/webdev.png')}
+  />
+</FlexDiv>
+
+---
+
+# Thomas Vogel
+
+<FlexDiv>
+  <Image
+    style={{ width: '300px',height:'300px', marginBottom:40 }}
+    src={require('file-loader!./images/arkulpa.png')}
+  />
+</FlexDiv>
+<FlexDiv>
+  <Image
+    style={{ width: '200px',height:'200px' }}
+    src={require('file-loader!./images/agent.png')}
+  />
+
+  <Image
+    style={{ width: '175px',height:'200px' }}
+    src={require('file-loader!./images/worker.svg')}
+  />
+</FlexDiv>
+
+---
+
+export default Layout;
+
+# Serverless Pre-rendering
+
+is a feature of Now hosting from Zeit.co
+
+---
+
+export default Layout;
+
+#  How does it work
+
+
+---
+
+export default Layout;
+
+On first load data is fetched and the page gets renderd, because there is no
+cached version on the CDN.
+
+
+
+After that the page is stored on the CDN
+
+---
+
+export default Layout;
+
+From that point always the static version from the CDN gets returned.
+
+---
+
+export default Layout;
+
+In background the cache is checked and on stale cache state a Now Lambda function
+is triggered to refetch data and render page to the CDN.
+
+---
+export default Layout;
+
+# config
+
+<FlexDiv>
+  <Image
+    style={{width:1000, height:121 }}
+    src={require('file-loader!./images/config.png')}
+  />
+</FlexDiv>
+
+cache gets stale after 100 seconds, but cache is served until new version is available.
+
+---
+
+export default Layout;
+
+# a dynamic static site
+
+No matter how much traffic, only one background invocation is made at the
+interval of 100 seconds.
+
+
+---
+export default Layout;
+
+# Pros
+
+- Fast, even on slow API
+- No deployment required on new Content
+- Reduces Lambda invocations and traffic to the API (costs)
+- easy to implement
+
+---
+export default Layout;
+
+# Cons
+
+- Dependency to Zeit.co
+- Until the cache is rebuilt you probably show outdated content
+
+---
+export default Layout;
+
+# Example
+
+using Next.js and Sanity
+
+---
+
+# Next.js
+
+- is a framework for server-rendered React apps.
+- Automatic code splitting
+- routing
+- hot code reloading
+- ...
+
+---
+
+# Sanity
+
+- is a headless CMS
+- Backend is defined with the schema
+- Backend is super clean, easy for users
+- they have their own query language (GROQ), graqhpl in public beta
+- Media manipulation possible with the CDN
+
+
+---
+
+# DEMO
+
+---
+
+# Agent Conf
+
+
+<FlexDiv>
+  <Image
+    style={{ width: '200px',height:'200px' }}
+    src={require('file-loader!./images/agent.png')}
+  />
+
+</FlexDiv>
+
+
+Everyone in the room should attend! 👋
+
+---
+
+# arkulpa is hiring
+
+
+<FlexDiv>
+  <Image
+    style={{ width: '200px',height:'200px' }}
+    src={require('file-loader!./images/arkulpa.png')}
+  />
+
+</FlexDiv>
+
+
+You like to work with the newest technology on great projects, lets talk.
+
